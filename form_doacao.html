@@ -29,7 +29,7 @@
             <a class="nav-link" href="animais.html">Quero adotar</a>
           </li>
           <li class="nav-item px-2">
-            <a class="nav-link" href="form_doacao.html">Quero doar</a>
+            <a class="nav-link active" href="form_doacao.html">Quero doar</a>
           </li>
           <li class="nav-item px-2">
             <a type="button" class="btn btn-warning text-dark nav-item fw-bolded fs-5" href="login_usuario.html">Login</a>
@@ -43,22 +43,52 @@
   <section class="container ">
     <div class="row">
       <div class="col-8 col-md-10 mt-2 mb-3 mx-auto py-3 px-md-5 border rounded bg-body-tertiary" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);">
-        <h1 class="fw-bolded fs-3 text-warning text-center">Preencha as informações abaixo para cadastrar-se!</h1>
-        <div class="mx-1 mb-1">
-          <label for="form_nome" class="form-label fw-bold">Nome</label>
-          <input type="text" class="form-control" id="form_nome" placeholder="">
+        <h1 class="fw-bolded fs-3 text-warning text-center">Cadastre seu pet para doação</h1>
+        <div class="mb-3">
+          <label for="nomePet" class="form-label fw-bolded">Nome do Pet</label>
+          <input type="text" class="form-control" id="nomePet">
         </div>
-        <div class="mx-1 mb-1">
-          <label for="form_endereco" class="form-label fw-bold">Endereço</label>
-          <input type="text" class="form-control" id="form_endereco" placeholder="">
+        <div class="mb-3">
+          <label for="descricaoPet" class="form-label fw-bolded">Breve descrição do Pet</label>
+          <textarea class="form-control" id="descricaoPet" rows="2"></textarea>
         </div>
-        <div class="row mb-1">
-          <div class="col-md-5 mx-1 mb-1">
-            <label for="form_cidade" class="form-label fw-bold">Cidade</label>
+        <div class="row">
+          <div class="col ms-1 mb-1">
+            <label for="form_especie" class="form-label fw-bolded">Espécie</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Selecione</option>
+              <option value="cao">Cão</option>
+              <option value="gato">Gato</option>
+            </select>
+          </div>
+          <div class="col ms-1 mb-1">
+            <label for="form_sexo" class="form-label fw-bolded">Sexo</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Selecione</option>
+              <option value="F">Fêmea</option>
+              <option value="M">Macho</option>
+            </select>
+          </div>
+          <div class="col mb-3">
+            <label for="racaPet" class="form-label fw-bolded">Raça do Pet</label>
+            <input type="text" class="form-control" id="racaPet">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col mb-3">
+            <label for="idadePet" class="form-label fw-bolded">Idade(anos)</label>
+            <input type="text" class="form-control d-inline" id="idadePet">
+          </div>
+          <div class="col mb-3">
+            <label for="pesoPet" class="form-label fw-bolded">Peso(kg)</label>
+            <input type="text" class="form-control d-inline" id="pesoPet">
+          </div>
+          <div class="col mx-1 mb-1">
+            <label for="form_cidade" class="form-label fw-bolded">Cidade</label>
             <input type="text" class="form-control" id="form_cidade" placeholder="">
           </div>
-          <div class="col-md-3 mx-1 mb-1">
-            <label for="form_estado" class="form-label fw-bold">Estado</label>
+          <div class="col mx-1 mb-1">
+            <label for="form_estado" class="form-label fw-bolded">Estado</label>
             <select class="form-select" aria-label="Default select example">
               <option selected>Selecione</option>
               <option value="1">SP</option>
@@ -90,33 +120,31 @@
               <option value="27">TO</option>
             </select>
           </div>
-          <div class="col-md-3 mx-1 mb-1">
-            <label for="form_cep" class="form-label fw-bold">CEP</label>
-            <input type="text" class="form-control" id="form_cep" maxlength="9" placeholder="00000-000">
+          <div class="mb-3">
+            <label for="personalidadePet" class="form-label fw-bolded">Personalidade do Pet</label>
+            <input type="text" class="form-control" id="personalidadePet">
           </div>
-        </div>
-        <div class="row mb-1">
-          <div class="col-md-5 mx-1 mb-1">
-            <label for="form_telefone1" class="form-label fw-bold">Telefone 1</label>
-            <input type="text" class="form-control" id="form_telefone1" placeholder="">
+          <div class="mb-3">
+            <label for="necessidadesEspeciaisPet" class="form-label fw-bolded">Necessidades Especiais do Pet</label>
+            <input type="text" class="form-control" id="necessidadesEspeciaisPet">
           </div>
-          <div class="col-md-5 mx-1 mb-1">
-            <label for="form_telefone2" class="form-label fw-bold">Telefone 2</label>
-            <input type="text" class="form-control" id="form_telefone2" placeholder="">
+          <div class="mb-3">
+            <label for="entregaPet" class="form-label fw-bolded">Disponibilidade para entregar o Pet para o Adotante? Se sim, até quantos quilômetros?</label>
+            <input type="text" class="form-control" id="entregaPet">
           </div>
+          <div class="mb-3">
+            <label for="fotosPet" class="form-label">Anexe as fotos do seu Pet</label>
+            <input class="form-control" type="file" id="fotosPet" multiple>
+          </div>
+          <div class="form-check my-4">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Declaro que estou decidido pela doação, e concordo em avaliar com critério o perfil dos interessados na adoção deste animal de estimação.
+            </label>
+          </div>
+          <button type="button" class="btn btn-warning mx-1 my-3 ">Cadastrar</button>
         </div>
-        <div class="mx-1 mb-1">
-          <label for="email_login" class="form-label fw-bold">E-mail</label>
-          <input type="email" class="form-control" id="email_login" placeholder="">
-        </div>
-        <div class="mx-1 mb-1">
-          <label for="password_login" class="form-label fw-bold">Password</label>
-          <input type="password" id="password_login" class="form-control" placeholder="Insira sua senha de 8 dígitos" aria-describedby="passwordHelpBlock">
-        </div>
-        <button type="button" class="btn btn-warning mx-1 mt-3">Cadastrar</button>
-        <p class="mx-1 my-3">Já tem cadastro? Faço o seu login clicando <a class="text-warning" href="login_usuario.html">AQUI!</a></p>
       </div>
-    </div>
 
   </section>
 
